@@ -12,8 +12,8 @@ public class SaludarControlador {
     int id=1;
     ArrayList<Saludador> saludarLista = new ArrayList<Saludador>();
 
-    @RequestMapping("/SaludarRequest/{nombre}")
-    public String SaludarRequest(@PathVariable(("nombre"))String nombre){
+    @RequestMapping("/Saludar/{nombre}")
+    public String Saludar(@PathVariable(("nombre"))String nombre){
          
         Saludador saludo = new Saludador();
         saludo.setId(id);
@@ -24,15 +24,15 @@ public class SaludarControlador {
     
     }
 
-    @GetMapping("/BuscarSaludosRequest")
-    public ArrayList<Saludador> BuscarSaludosRequest()
+    @GetMapping("/BuscarSaludos")
+    public ArrayList<Saludador> BuscarSaludos()
     {
         return saludarLista;
     }
 
 
-    @GetMapping("/ModificarSaludoRequest/{id}/{nombre}")
-    public Boolean ModificarSaludoRequest(@PathVariable("id") int id, @PathVariable("nombre") String nombre)
+    @GetMapping("/ModificarSaludo/{id}/{nombre}")
+    public Boolean ModificarSaludo(@PathVariable("id") int id, @PathVariable("nombre") String nombre)
     {
         for(Saludador o : saludarLista)
         {
@@ -46,8 +46,8 @@ public class SaludarControlador {
         return true;
     }
 
-    @GetMapping("/BorrarSaludoResponse/{id}")
-    public Boolean BorrarSaludoResponse(@PathVariable("id") int id)
+    @GetMapping("/BorrarSaludo/{id}")
+    public Boolean BorrarSaludo(@PathVariable("id") int id)
     {
         for(Saludador o : saludarLista)
         {
